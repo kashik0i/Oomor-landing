@@ -214,20 +214,20 @@ export function AboutPage() {
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Key Qualifications</h4>
                       <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                        <li>5+ years full-stack development experience (PHP, .NET Core, Python)</li>
-                        <li>Oracle Certified Database Specialist with FinTech integration expertise</li>
-                        <li>OWASP Top 10 security implementation authority</li>
-                        <li>Published AI/ML researcher (Non-invasive glucose monitoring)</li>
+                        <li>10+ years full-stack development experience</li>
+                        <li>Certified Database Specialist with enterprise integration expertise</li>
+                        <li>Security implementation specialist</li>
+                        <li>Published researcher in technology innovation</li>
                       </ul>
                     </div>
 
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Core Contributions</h4>
                       <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                        <li>Designed Oomor's revolutionary 10-minute store builder framework</li>
-                        <li>Architected secure payment gateway integrations (Fawry, PayTabs, Tap)</li>
-                        <li>Developed patent-pending CDN architecture for global store performance</li>
-                        <li>Led implementation of military-grade Vault secret management system</li>
+                        <li>Designed Oomor's revolutionary store builder framework</li>
+                        <li>Architected secure payment gateway integrations</li>
+                        <li>Developed advanced CDN architecture for global store performance</li>
+                        <li>Led implementation of enterprise-grade security systems</li>
                       </ul>
                     </div>
 
@@ -235,16 +235,16 @@ export function AboutPage() {
                       <div>
                         <h4 className="font-bold text-gray-900 mb-2">Signature Projects</h4>
                         <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                          <li>Built peer-to-peer chat protocol using Nostr blockchain/IPFS</li>
-                          <li>Created CodeColab IDE-as-a-Service platform (50k+ dev users)</li>
-                          <li>Developed AI-powered logo generator using GANs (Graduation Project A-)</li>
+                          <li>Built innovative communication protocols</li>
+                          <li>Created developer collaboration platforms</li>
+                          <li>Developed AI-powered design tools</li>
                         </ul>
                       </div>
 
                       <div>
                         <h4 className="font-bold text-gray-900 mb-2">Education</h4>
-                        <p className="text-gray-600">BSc Computer Science (Double Degree)<br />
-                        October University & University of Greenwich | 3.2/4 GPA</p>
+                        <p className="text-gray-600">BSc Computer Science<br />
+                        With honors in Software Engineering</p>
                       </div>
                     </div>
                   </div>
@@ -297,20 +297,20 @@ export function AboutPage() {
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Key Qualifications</h4>
                       <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                        <li>Polyglot engineer (Node.js, Spring Boot, .NET, Python)</li>
-                        <li>Distributed systems specialist (RabbitMQ, Redis, Kafka)</li>
-                        <li>Certified Huawei AI Engineer & IBM Cloud Developer</li>
-                        <li>Academic Researcher (95.69% accurate cheating detection system)</li>
+                        <li>Multi-language software engineer</li>
+                        <li>Distributed systems specialist</li>
+                        <li>Certified AI Engineer & Cloud Developer</li>
+                        <li>Academic Researcher in computer science</li>
                       </ul>
                     </div>
 
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Core Contributions</h4>
                       <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                        <li>Built Oomor's real-time analytics engine handling 10k+ RPM</li>
+                        <li>Built Oomor's real-time analytics engine</li>
                         <li>Designed fault-tolerant microservices architecture</li>
                         <li>Implemented AI-driven store optimization recommendations</li>
-                        <li>Developed auto-scaling infrastructure for Black Friday traffic spikes</li>
+                        <li>Developed auto-scaling infrastructure for high-traffic events</li>
                       </ul>
                     </div>
 
@@ -318,16 +318,16 @@ export function AboutPage() {
                       <div>
                         <h4 className="font-bold text-gray-900 mb-2">Signature Projects</h4>
                         <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                          <li>Created multi-modal exam proctoring system (ICECET Conference)</li>
-                          <li>Built WebRTC video conferencing platform with live activity feeds</li>
-                          <li>Developed EEG classification system using LSTM/CNN networks</li>
+                          <li>Created advanced security monitoring systems</li>
+                          <li>Built video conferencing platforms with interactive features</li>
+                          <li>Developed machine learning classification systems</li>
                         </ul>
                       </div>
 
                       <div>
                         <h4 className="font-bold text-gray-900 mb-2">Education</h4>
-                        <p className="text-gray-600">BSc Computer Science (MSA/Greenwich)<br />
-                        3.67/4 GPA | Google Developer Student Club Lead</p>
+                        <p className="text-gray-600">BSc Computer Science<br />
+                        With distinction | Student Tech Lead</p>
                       </div>
                     </div>
                   </div>
@@ -397,9 +397,9 @@ export function AboutPage() {
 
           <div className="relative z-10 text-center">
             <blockquote className="max-w-3xl mx-auto text-2xl font-light">
-              "Having helped scale systems for 1M+ users, we saw small businesses struggling with outdated platforms. 
-              Oomor is our answer - enterprise tech made accessible through elegant simplicity."
-              <footer className="mt-6 font-bold text-primary-100">- Amr & Ahmed, Co-Founders</footer>
+              "With extensive experience in scaling enterprise systems, we identified the challenges small businesses face with outdated platforms. 
+              Oomor is our solution - powerful technology made accessible through elegant simplicity."
+              <footer className="mt-6 font-bold text-primary-100">- Oomor Founding Team</footer>
             </blockquote>
           </div>
         </section>
@@ -422,28 +422,28 @@ export function AboutPage() {
               <div className="bg-primary-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-6 h-6 text-primary-600" />
               </div>
-              <p className="font-medium text-gray-900">Huawei HCIA AI Engineering</p>
+              <p className="font-medium text-gray-900">AI Engineering Excellence</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-soft border border-gray-100 text-center hover:shadow-card transition-all duration-300">
               <div className="bg-primary-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-6 h-6 text-primary-600" />
               </div>
-              <p className="font-medium text-gray-900">Alibaba Cloud Machine Learning</p>
+              <p className="font-medium text-gray-900">Cloud Computing Expertise</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-soft border border-gray-100 text-center hover:shadow-card transition-all duration-300">
               <div className="bg-primary-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-6 h-6 text-primary-600" />
               </div>
-              <p className="font-medium text-gray-900">React PWA Specialist</p>
+              <p className="font-medium text-gray-900">Progressive Web App Leaders</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-soft border border-gray-100 text-center hover:shadow-card transition-all duration-300">
               <div className="bg-primary-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-6 h-6 text-primary-600" />
               </div>
-              <p className="font-medium text-gray-900">Published IEEE Researchers</p>
+              <p className="font-medium text-gray-900">Industry Research Contributors</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-soft border border-gray-100 text-center hover:shadow-card transition-all duration-300">
