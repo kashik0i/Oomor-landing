@@ -15,6 +15,7 @@ const FeaturesPage = lazy(() => import('./pages/Features').then(module => ({ def
 const PricingPage = lazy(() => import('./pages/Pricing').then(module => ({ default: module.PricingPage })))
 const IntegrationsPage = lazy(() => import('./pages/Integrations').then(module => ({ default: module.IntegrationsPage })))
 const UpdatesPage = lazy(() => import('./pages/Updates').then(module => ({ default: module.UpdatesPage })))
+const DemoPage = lazy(() => import('./pages/Demo').then(module => ({ default: module.DemoPage })))
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: '/updates',
         element: <UpdatesPage />,
+      },
+      {
+        path: '/demo',
+        element: <DemoPage />,
       },
     ],
   },
