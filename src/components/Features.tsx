@@ -51,7 +51,7 @@ export function Features() {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-card transition-all duration-300 group"
+              className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-card will-change-transform"
             >
               <div className="flex items-start mb-5">
                 <div className="bg-gradient-to-br from-primary-500 to-secondary-500 p-3 rounded-xl mr-4 text-white transform group-hover:rotate-6 transition-transform">

@@ -1,18 +1,20 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 import { Layout } from './components/Layout'
-import { Home } from './pages/Home'
-import { AboutPage } from './pages/About'
-import { CareersPage } from './pages/Careers'
-import { ContactPage } from './pages/Contact'
-import { LegalPage } from './pages/Legal'
-import { BlogPage } from './pages/Blog'
-import { HelpPage } from './pages/Help'
-import { TutorialsPage } from './pages/Tutorials'
-import { CommunityPage } from './pages/Community'
-import { FeaturesPage } from './pages/Features'
-import { PricingPage } from './pages/Pricing'
-import { IntegrationsPage } from './pages/Integrations'
-import { UpdatesPage } from './pages/Updates'
+
+const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })))
+const AboutPage = lazy(() => import('./pages/About').then(module => ({ default: module.AboutPage })))
+const CareersPage = lazy(() => import('./pages/Careers').then(module => ({ default: module.CareersPage })))
+const ContactPage = lazy(() => import('./pages/Contact').then(module => ({ default: module.ContactPage })))
+const LegalPage = lazy(() => import('./pages/Legal').then(module => ({ default: module.LegalPage })))
+const BlogPage = lazy(() => import('./pages/Blog').then(module => ({ default: module.BlogPage })))
+const HelpPage = lazy(() => import('./pages/Help').then(module => ({ default: module.HelpPage })))
+const TutorialsPage = lazy(() => import('./pages/Tutorials').then(module => ({ default: module.TutorialsPage })))
+const CommunityPage = lazy(() => import('./pages/Community').then(module => ({ default: module.CommunityPage })))
+const FeaturesPage = lazy(() => import('./pages/Features').then(module => ({ default: module.FeaturesPage })))
+const PricingPage = lazy(() => import('./pages/Pricing').then(module => ({ default: module.PricingPage })))
+const IntegrationsPage = lazy(() => import('./pages/Integrations').then(module => ({ default: module.IntegrationsPage })))
+const UpdatesPage = lazy(() => import('./pages/Updates').then(module => ({ default: module.UpdatesPage })))
 
 const router = createBrowserRouter([
   {
@@ -76,5 +78,13 @@ const router = createBrowserRouter([
 ])
 
 export const App = () => {
-  return <RouterProvider router={router} />
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primary-500"></div>
+      </div>
+    }>
+      <RouterProvider router={router} />
+    </Suspense>
+  )
 }
