@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Hero } from '../components/Hero'
 
 const Benefits = lazy(() => import('../components/Benefits').then(module => ({ default: module.Benefits })))

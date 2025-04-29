@@ -16,6 +16,9 @@ const PricingPage = lazy(() => import('./pages/Pricing').then(module => ({ defau
 const IntegrationsPage = lazy(() => import('./pages/Integrations').then(module => ({ default: module.IntegrationsPage })))
 const UpdatesPage = lazy(() => import('./pages/Updates').then(module => ({ default: module.UpdatesPage })))
 const DemoPage = lazy(() => import('./pages/Demo').then(module => ({ default: module.DemoPage })))
+const AdminAuth = lazy(() => import('./pages/AdminAuth').then(module => ({ default: module.AdminAuth })))
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard').then(module => ({ default: module.AdminDashboard })))
+const DashboardHome = lazy(() => import('./pages/admin/DashboardHome').then(module => ({ default: module.DashboardHome })))
 
 const router = createBrowserRouter([
   {
@@ -77,6 +80,20 @@ const router = createBrowserRouter([
       {
         path: '/demo',
         element: <DemoPage />,
+      },
+      {
+        path: '/admin/auth',
+        element: <AdminAuth />,
+      },
+    ],
+  },
+  {
+    path: '/admin',
+    element: <AdminDashboard />,
+    children: [
+      {
+        path: '',
+        element: <DashboardHome />,
       },
     ],
   },
