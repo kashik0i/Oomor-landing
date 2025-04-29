@@ -1,5 +1,4 @@
 import {
-    ShoppingBag,
     ArrowRight,
     CheckCircle,
     Sparkles,
