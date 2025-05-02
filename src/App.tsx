@@ -2,6 +2,7 @@ import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import {lazy, Suspense} from 'react'
 import {Layout} from './components/Layout'
 import {AuthProvider} from './context/AuthContext';
+import {ProtectedRoute} from './components/ProtectedRoutes';
 
 const Home = lazy(() => import('./pages/Home').then(module => ({default: module.Home})))
 const AboutPage = lazy(() => import('./pages/About').then(module => ({default: module.AboutPage})))
@@ -21,6 +22,11 @@ const AdminAuth = lazy(() => import('./pages/AdminAuth').then(module => ({defaul
 const DashboardHome = lazy(() => import('./pages/admin/DashboardHome').then(module => ({default: module.DashboardHome})))
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard').then(module => ({default: module.AdminDashboard})))
 const PageNotFound = lazy(() => import('./pages/PageNotFound').then(module => ({default: module.PageNotFound})))
+const SubscriptionsManagement = lazy(() => import('./pages/admin/SubscriptionsManagement').then(module => ({default: module.SubscriptionsManagement})))
+const TransactionMonitoring = lazy(() => import('./pages/admin/TransactionMonitoring').then(module => ({default: module.TransactionMonitoring})))
+const RevenueSharing = lazy(() => import('./pages/admin/RevenueSharing').then(module => ({default: module.RevenueSharing})))
+const AdvertisingPlatform = lazy(() => import('./pages/admin/AdvertisingPlatform').then(module => ({default: module.AdvertisingPlatform})))
+const AddOnServices = lazy(() => import('./pages/admin/AddOnServices').then(module => ({default: module.AddOnServices})))
 
 export const App = () => {
     const router = createBrowserRouter([
@@ -92,11 +98,85 @@ export const App = () => {
         },
         {
             path: '/admin',
-            element: <AdminDashboard/>,
+            element: <ProtectedRoute />,
             children: [
                 {
-                    path: 'dashboard',
-                    element: <DashboardHome/>,
+                    path: '/admin',
+                    element: <AdminDashboard/>,
+                    children: [
+                        {
+                            path: 'dashboard',
+                            element: <DashboardHome/>,
+                        },
+                        {
+                            path: 'mini-apps',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Mini Apps Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'mini-apps/stores',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Storefronts Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'mini-apps/services',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Services Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'mini-apps/approvals',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Mini App Approvals</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'marketplace',
+                            element: <AdvertisingPlatform />,
+                        },
+                        {
+                            path: 'vendor-hub',
+                            element: <RevenueSharing />,
+                        },
+                        {
+                            path: 'users',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">User Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'products',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Product Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'services',
+                            element: <AddOnServices />,
+                        },
+                        {
+                            path: 'orders',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Order Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'payments',
+                            element: <TransactionMonitoring />,
+                        },
+                        {
+                            path: 'shipping',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Shipping Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'subscriptions',
+                            element: <SubscriptionsManagement />,
+                        },
+                        {
+                            path: 'analytics',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Analytics Dashboard</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'settings',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Admin Settings</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'support',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Support Center</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                        {
+                            path: 'feedback',
+                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">User Feedback</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                        },
+                    ],
                 },
             ],
         },
