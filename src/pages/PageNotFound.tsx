@@ -1,7 +1,10 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
+import {useAuth} from "../context/AuthContext.tsx";
 
 export function PageNotFound() {
+    const {isAuthenticated} = useAuth();
+
     return (
         <div
             className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-b from-background to-muted">
@@ -18,11 +21,19 @@ export function PageNotFound() {
                     <TicTacToe/>
                 </div>
 
+                {isAuthenticated ? (
+                <Link to="/admin/dashboard" className="inline-flex items-center gap-2">
+                    <button className="gap-2">
+                        <span>Back to Dashboard</span>
+                    </button>
+                </Link>
+                ) : (
                 <Link to="/" className="inline-flex items-center gap-2">
                     <button className="gap-2">
                         <span>Back to Home</span>
                     </button>
                 </Link>
+                )}
             </div>
         </div>
     )
