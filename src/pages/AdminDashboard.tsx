@@ -20,6 +20,5 @@ export const AdminDashboard: React.FC = () => {
             </div>
         </div>
         </SidebarProvider>
-
     );
 }; 

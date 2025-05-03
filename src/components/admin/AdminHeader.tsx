@@ -41,7 +41,7 @@ export const AdminHeader: React.FC = () => {
   ];
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-gray-100 shadow-sm">
       <div className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center"/>
 

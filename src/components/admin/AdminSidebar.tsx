@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Link, useLocation, useNavigate} from 'react-router-dom';
+import React from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
 import {
     LayoutDashboard,
     Users,
@@ -9,8 +9,6 @@ import {
     BarChart2,
     HelpCircle,
     MessageSquare,
-    ChevronLeft,
-    ChevronRight,
     LogOut,
     ShoppingBag,
     Store,
@@ -34,8 +32,6 @@ import {
     SidebarMenuSub,
     SidebarMenuSubItem,
     SidebarMenuSubButton,
-    SidebarProvider,
-    SidebarTrigger
 } from "../ui/sidebar";
 
 export const AdminSidebar: React.FC = () => {
