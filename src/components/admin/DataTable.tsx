@@ -1,5 +1,25 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Search, Filter, ArrowUp, ArrowDown } from 'lucide-react';
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
+import { Card, CardHeader, CardContent, CardFooter } from "../ui/card";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell
+} from "../ui/table";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious
+} from "../ui/pagination";
 
 interface Column {
   key: string;
@@ -70,151 +90,150 @@ export const DataTable: React.FC<DataTableProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-      <div className="p-6 border-b">
+    <Card className="overflow-hidden">
+      <CardHeader className="p-6 border-b">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
           <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
 
           {searchable && (
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <input
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 z-10" />
+              <Input
                 type="text"
                 placeholder="Search..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="pl-10 w-full"
               />
             </div>
           )}
         </div>
-      </div>
+      </CardHeader>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              {columns.map((column) => (
-                <th
-                  key={column.key}
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  <div className="flex items-center">
-                    {column.header}
-                    {column.sortable && (
-                      <button
-                        className="ml-2 focus:outline-none"
-                        onClick={() => handleSort(column.key)}
-                      >
-                        {sortConfig?.key === column.key ? (
-                          sortConfig.direction === 'asc' ? (
-                            <ArrowUp className="h-4 w-4" />
+      <CardContent className="p-0">
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableHead key={column.key}>
+                    <div className="flex items-center">
+                      {column.header}
+                      {column.sortable && (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="ml-2 h-4 w-4"
+                          onClick={() => handleSort(column.key)}
+                        >
+                          {sortConfig?.key === column.key ? (
+                            sortConfig.direction === 'asc' ? (
+                              <ArrowUp className="h-4 w-4" />
+                            ) : (
+                              <ArrowDown className="h-4 w-4" />
+                            )
                           ) : (
-                            <ArrowDown className="h-4 w-4" />
-                          )
-                        ) : (
-                          <div className="h-4 w-4 opacity-30">⇅</div>
-                        )}
-                      </button>
+                            <div className="h-4 w-4 opacity-30">⇅</div>
+                          )}
+                        </Button>
+                      )}
+                    </div>
+                  </TableHead>
+                ))}
+                {actionComponent && <TableHead className="text-right">Actions</TableHead>}
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {paginatedData.length > 0 ? (
+                paginatedData.map((item, index) => (
+                  <TableRow key={index}>
+                    {columns.map((column) => (
+                      <TableCell key={column.key}>
+                        {item[column.key]}
+                      </TableCell>
+                    ))}
+                    {actionComponent && (
+                      <TableCell className="text-right">
+                        {actionComponent(item)}
+                      </TableCell>
                     )}
-                  </div>
-                </th>
-              ))}
-              {actionComponent && <th scope="col" className="px-6 py-3 text-right">Actions</th>}
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {paginatedData.length > 0 ? (
-              paginatedData.map((item, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  {columns.map((column) => (
-                    <td key={column.key} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {item[column.key]}
-                    </td>
-                  ))}
-                  {actionComponent && (
-                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      {actionComponent(item)}
-                    </td>
-                  )}
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td
-                  colSpan={columns.length + (actionComponent ? 1 : 0)}
-                  className="px-6 py-4 text-center text-sm text-gray-500"
-                >
-                  No data found
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length + (actionComponent ? 1 : 0)}
+                    className="text-center"
+                  >
+                    No data found
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+      </CardContent>
 
       {totalPages > 1 && (
-        <div className="px-6 py-4 border-t flex items-center justify-between">
+        <CardFooter className="px-6 py-4 border-t flex items-center justify-between">
           <div className="text-sm text-gray-500">
             Showing {Math.min(((currentPage - 1) * pageSize) + 1, sortedData.length)} to {Math.min(currentPage * pageSize, sortedData.length)} of {sortedData.length} entries
           </div>
 
-          <div className="flex space-x-2">
-            <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-              disabled={currentPage === 1}
-              className={`p-2 rounded-md ${
-                currentPage === 1 
-                  ? 'text-gray-300 cursor-not-allowed' 
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-
-            {[...Array(Math.min(5, totalPages))].map((_, i) => {
-              // Logic to show correct page numbers when there are many pages
-              let pageNumber;
-              if (totalPages <= 5) {
-                pageNumber = i + 1;
-              } else if (currentPage <= 3) {
-                pageNumber = i + 1;
-              } else if (currentPage >= totalPages - 2) {
-                pageNumber = totalPages - 4 + i;
-              } else {
-                pageNumber = currentPage - 2 + i;
-              }
-
-              return (
-                <button
-                  key={i}
-                  onClick={() => setCurrentPage(pageNumber)}
-                  className={`px-3 py-1 rounded-md ${
-                    currentPage === pageNumber
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-gray-600 hover:bg-gray-100'
-                  }`}
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  disabled={currentPage === 1}
+                  className={currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""}
                 >
-                  {pageNumber}
-                </button>
-              );
-            })}
+                  <ChevronLeft className="h-5 w-5" />
+                </Button>
+              </PaginationItem>
 
-            <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-              disabled={currentPage === totalPages}
-              className={`p-2 rounded-md ${
-                currentPage === totalPages 
-                  ? 'text-gray-300 cursor-not-allowed' 
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
+              {[...Array(Math.min(5, totalPages))].map((_, i) => {
+                // Logic to show correct page numbers when there are many pages
+                let pageNumber;
+                if (totalPages <= 5) {
+                  pageNumber = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNumber = i + 1;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNumber = totalPages - 4 + i;
+                } else {
+                  pageNumber = currentPage - 2 + i;
+                }
+
+                return (
+                  <PaginationItem key={i}>
+                    <PaginationLink
+                      onClick={() => setCurrentPage(pageNumber)}
+                      isActive={currentPage === pageNumber}
+                    >
+                      {pageNumber}
+                    </PaginationLink>
+                  </PaginationItem>
+                );
+              })}
+
+              <PaginationItem>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  disabled={currentPage === totalPages}
+                  className={currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""}
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </Button>
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </CardFooter>
       )}
-    </div>
+    </Card>
   );
 };
