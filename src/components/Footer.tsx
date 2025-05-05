@@ -7,7 +7,7 @@ export function Footer() {
 
   // Custom link component that scrolls to top on mobile
   const FooterLink = ({ to, children }: { to: string, children: React.ReactNode }) => {
-    const handleClick = (e: React.MouseEvent) => {
+    const handleClick = () => {
         scrollToTop()
     }
 
