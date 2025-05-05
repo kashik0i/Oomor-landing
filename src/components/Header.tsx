@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 import {ShoppingBag, Menu, X} from 'lucide-react'
-import {useAuth} from '../context/AuthContext';
+import {useAuth} from '@/context';
 import {useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 

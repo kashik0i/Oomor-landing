@@ -1,7 +1,7 @@
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import {lazy, Suspense} from 'react'
 import {Layout} from './components/Layout'
-import {AuthProvider} from './context/AuthContext';
+import {AuthProvider} from './context/AuthProvider.tsx';
 import {ProtectedRoute} from './components/ProtectedRoutes';
 import {PlaceholderPage} from './components/PlaceholderPage';
 
@@ -99,7 +99,7 @@ export const App = () => {
         },
         {
             path: '/admin',
-            element: <ProtectedRoute />,
+            element: <ProtectedRoute/>,
             children: [
                 {
                     path: '/admin',
@@ -111,78 +111,78 @@ export const App = () => {
                         },
                         {
                             path: 'mini-apps',
-                            element: <PlaceholderPage title="Mini Apps Management" />,
+                            element: <PlaceholderPage title="Mini Apps Management"/>,
                         },
                         {
                             path: 'mini-apps/stores',
-                            element: <PlaceholderPage title="Storefronts Management" />,
+                            element: <PlaceholderPage title="Storefronts Management"/>,
                         },
                         {
                             path: 'mini-apps/services',
-                            element: <PlaceholderPage title="Services Management" />,
+                            element: <PlaceholderPage title="Services Management"/>,
                         },
                         {
                             path: 'mini-apps/approvals',
-                            element: <PlaceholderPage title="Mini App Approvals" />,
+                            element: <PlaceholderPage title="Mini App Approvals"/>,
                         },
                         {
                             path: 'marketplace',
-                            element: <AdvertisingPlatform />,
+                            element: <AdvertisingPlatform/>,
                         },
                         {
                             path: 'vendor-hub',
-                            element: <RevenueSharing />,
+                            element: <RevenueSharing/>,
                         },
                         {
                             path: 'users',
-                            element: <PlaceholderPage title="User Management" />,
+                            element: <PlaceholderPage title="User Management"/>,
                         },
                         {
                             path: 'products',
-                            element: <PlaceholderPage title="Product Management" />,
+                            element: <PlaceholderPage title="Product Management"/>,
                         },
                         {
                             path: 'services',
-                            element: <AddOnServices />,
+                            element: <AddOnServices/>,
                         },
                         {
                             path: 'orders',
-                            element: <PlaceholderPage title="Order Management" />,
+                            element: <PlaceholderPage title="Order Management"/>,
                         },
                         {
                             path: 'payments',
-                            element: <TransactionMonitoring />,
+                            element: <TransactionMonitoring/>,
                         },
                         {
                             path: 'shipping',
-                            element: <PlaceholderPage title="Shipping Management" />,
+                            element: <PlaceholderPage title="Shipping Management"/>,
                         },
                         {
                             path: 'subscriptions',
-                            element: <SubscriptionsManagement />,
+                            element: <SubscriptionsManagement/>,
                         },
                         {
                             path: 'analytics',
-                            element: <PlaceholderPage title="Analytics Dashboard" />,
+                            element: <PlaceholderPage title="Analytics Dashboard"/>,
                         },
                         {
                             path: 'settings',
-                            element: <PlaceholderPage title="Admin Settings" />,
+                            element: <PlaceholderPage title="Admin Settings"/>,
                         },
                         {
                             path: 'support',
-                            element: <PlaceholderPage title="Support Center" />,
+                            element: <PlaceholderPage title="Support Center"/>,
                         },
                         {
                             path: 'feedback',
-                            element: <PlaceholderPage title="User Feedback" />,
+                            element: <PlaceholderPage title="User Feedback"/>,
                         },
                     ],
                 },
             ],
         },
         {
-            path:'*',
+            path: '*',
             element: <PageNotFound/>,
         }
     ]);

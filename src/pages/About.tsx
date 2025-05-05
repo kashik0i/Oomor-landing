@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import { 
-  ChevronDown, 
-  ChevronUp, 
-  Target, 
+  Target,
   Eye, 
   Heart, 
   Clock, 
@@ -10,7 +8,6 @@ import {
   Award, 
   Sparkles,
   ArrowRight,
-  Globe
 } from 'lucide-react'
 import { useState } from 'react'
 

@@ -1,4 +1,4 @@
-import {Account, Client, ID, type Models, AppwriteException} from 'appwrite';
+import {Account, AppwriteException, Client, ID, type Models} from 'appwrite';
 import {assertIsDefined} from "@/lib/utils.ts";
 
 export class AuthService {
@@ -18,14 +18,11 @@ export class AuthService {
 
     async register(email: string, password: string) {
         try {
-            console.log('Attempting to register user:', email);
-            const user = await this.account.create(
+            return await this.account.create(
                 ID.unique(),
                 email,
                 password
             );
-            console.log('User registered successfully:', user);
-            return user;
         } catch (error) {
             console.error('Registration error:', error);
             throw new Error(error instanceof Error ? error.message : 'Registration failed');
@@ -72,15 +69,13 @@ export class AuthService {
 
     async checkActiveSession() {
         try {
-            const session = await this.account.getSession('current'); // Get the current session
-            return session !== null; // Return true if there is an active session
+            const session = await this.account.getSession('current');
+            return session !== null;
         } catch (error) {
-            // If there's an error (e.g., no active session), handle it appropriately
             if (error instanceof AppwriteException && error.code === 401) {
-                console.error('Error checking active session:', error.message);
                 return false; // No active session
             }
-            throw error; // Re-throw other unexpected errors
+            // throw error; // Re-throw other unexpected errors
         }
     }
 

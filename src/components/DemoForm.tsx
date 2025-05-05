@@ -23,7 +23,6 @@ export function DemoForm({ onClose }: { onClose: () => void }) {
     setIsSubmitting(true)
 
     try {
-      console.log(import.meta.env)
       assertIsDefined(import.meta.env.VITE_APP_PROJECT_ID, 'Project ID is not defined')
       assertIsDefined(import.meta.env.VITE_APP_APPWRITE_URL, 'Appwrite URL is not defined')
       const client = new Client()

@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
-import {useAuth} from "../context/AuthContext.tsx";
+import {useAuth} from "@/context";
 
 export function PageNotFound() {
     const {isAuthenticated} = useAuth();
