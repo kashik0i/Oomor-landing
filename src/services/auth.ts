@@ -1,4 +1,5 @@
-import {Account, Client, ID, type Models} from 'appwrite';
+import {Account, Client, ID, type Models, AppwriteException} from 'appwrite';
+import {assertIsDefined} from "@/lib/utils.ts";
 
 export class AuthService {
     account: Account;
@@ -6,9 +7,11 @@ export class AuthService {
     user: Promise<Models.User<Models.Preferences> | null> | null = null;
 
     constructor() {
+        assertIsDefined(import.meta.env.VITE_APP_APPWRITE_URL, 'Appwrite URL is not defined');
+        assertIsDefined(import.meta.env.VITE_APP_PROJECT_ID, 'Appwrite Project ID is not defined');
         const client = new Client()
-            .setEndpoint('https://fra.cloud.appwrite.io/v1') // Your Appwrite endpoint
-            .setProject('66e57301001124e5010b'); // Your project ID
+            .setEndpoint(import.meta.env.VITE_APP_APPWRITE_URL)
+            .setProject(import.meta.env.VITE_APP_PROJECT_ID);
 
         this.account = new Account(client);
     }
@@ -73,7 +76,8 @@ export class AuthService {
             return session !== null; // Return true if there is an active session
         } catch (error) {
             // If there's an error (e.g., no active session), handle it appropriately
-            if (error.code === 401) {
+            if (error instanceof AppwriteException && error.code === 401) {
+                console.error('Error checking active session:', error.message);
                 return false; // No active session
             }
             throw error; // Re-throw other unexpected errors

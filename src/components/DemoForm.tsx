@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Client, Databases } from 'appwrite'
+import {assertIsDefined} from "@/lib/utils.ts";
 
 export function DemoForm({ onClose }: { onClose: () => void }) {
   const [formData, setFormData] = useState({
@@ -22,9 +23,12 @@ export function DemoForm({ onClose }: { onClose: () => void }) {
     setIsSubmitting(true)
 
     try {
+      console.log(import.meta.env)
+      assertIsDefined(import.meta.env.VITE_APP_PROJECT_ID, 'Project ID is not defined')
+      assertIsDefined(import.meta.env.VITE_APP_APPWRITE_URL, 'Appwrite URL is not defined')
       const client = new Client()
-        .setEndpoint('https://cloud.appwrite.io/v1')
-        .setProject('66e57301001124e5010b')
+        .setEndpoint(import.meta.env.VITE_APP_APPWRITE_URL)
+        .setProject(import.meta.env.VITE_APP_PROJECT_ID)
 
       const databases = new Databases(client)
 
