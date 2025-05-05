@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Search, Filter, ArrowUp, ArrowDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Search, Filter, ArrowUp, ArrowDown, Menu } from 'lucide-react';
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Card, CardHeader, CardContent, CardFooter } from "../ui/card";
@@ -47,6 +47,23 @@ export const DataTable: React.FC<DataTableProps> = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortConfig, setSortConfig] = useState<{key: string, direction: 'asc' | 'desc'} | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if the screen is mobile size
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the standard md breakpoint in Tailwind
+    };
+
+    // Initial check
+    checkIfMobile();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   // Filtering data based on search term
   const filteredData = searchTerm
@@ -89,6 +106,106 @@ export const DataTable: React.FC<DataTableProps> = ({
     setSortConfig({ key, direction });
   };
 
+  // Render mobile card view
+  const renderMobileView = () => {
+    return (
+      <div className="space-y-4 px-4">
+        {paginatedData.length > 0 ? (
+          paginatedData.map((item, index) => (
+            <Card key={index} className="overflow-hidden">
+              <CardContent className="p-4 space-y-3">
+                {columns.map((column) => (
+                  <div key={column.key} className="flex justify-between items-start border-b pb-2 last:border-b-0 last:pb-0">
+                    <span className="font-medium text-sm text-gray-500">{column.header}:</span>
+                    <span className="text-right text-sm">{item[column.key]}</span>
+                  </div>
+                ))}
+                {actionComponent && (
+                  <div className="pt-2 flex justify-end">
+                    {actionComponent(item)}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          ))
+        ) : (
+          <Card className="overflow-hidden">
+            <CardContent className="p-4 text-center">
+              No data found
+            </CardContent>
+          </Card>
+        )}
+      </div>
+    );
+  };
+
+  // Render desktop table view
+  const renderTableView = () => {
+    return (
+      <div className="overflow-x-auto">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              {columns.map((column) => (
+                <TableHead key={column.key}>
+                  <div className="flex items-center">
+                    {column.header}
+                    {column.sortable && (
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="ml-2 h-4 w-4"
+                        onClick={() => handleSort(column.key)}
+                      >
+                        {sortConfig?.key === column.key ? (
+                          sortConfig.direction === 'asc' ? (
+                            <ArrowUp className="h-4 w-4" />
+                          ) : (
+                            <ArrowDown className="h-4 w-4" />
+                          )
+                        ) : (
+                          <div className="h-4 w-4 opacity-30">⇅</div>
+                        )}
+                      </Button>
+                    )}
+                  </div>
+                </TableHead>
+              ))}
+              {actionComponent && <TableHead className="text-right">Actions</TableHead>}
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {paginatedData.length > 0 ? (
+              paginatedData.map((item, index) => (
+                <TableRow key={index}>
+                  {columns.map((column) => (
+                    <TableCell key={column.key}>
+                      {item[column.key]}
+                    </TableCell>
+                  ))}
+                  {actionComponent && (
+                    <TableCell className="text-right">
+                      {actionComponent(item)}
+                    </TableCell>
+                  )}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell
+                  colSpan={columns.length + (actionComponent ? 1 : 0)}
+                  className="text-center"
+                >
+                  No data found
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
+    );
+  };
+
   return (
     <Card className="overflow-hidden">
       <CardHeader className="p-6 border-b">
@@ -111,74 +228,22 @@ export const DataTable: React.FC<DataTableProps> = ({
       </CardHeader>
 
       <CardContent className="p-0">
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                {columns.map((column) => (
-                  <TableHead key={column.key}>
-                    <div className="flex items-center">
-                      {column.header}
-                      {column.sortable && (
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="ml-2 h-4 w-4"
-                          onClick={() => handleSort(column.key)}
-                        >
-                          {sortConfig?.key === column.key ? (
-                            sortConfig.direction === 'asc' ? (
-                              <ArrowUp className="h-4 w-4" />
-                            ) : (
-                              <ArrowDown className="h-4 w-4" />
-                            )
-                          ) : (
-                            <div className="h-4 w-4 opacity-30">⇅</div>
-                          )}
-                        </Button>
-                      )}
-                    </div>
-                  </TableHead>
-                ))}
-                {actionComponent && <TableHead className="text-right">Actions</TableHead>}
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {paginatedData.length > 0 ? (
-                paginatedData.map((item, index) => (
-                  <TableRow key={index}>
-                    {columns.map((column) => (
-                      <TableCell key={column.key}>
-                        {item[column.key]}
-                      </TableCell>
-                    ))}
-                    {actionComponent && (
-                      <TableCell className="text-right">
-                        {actionComponent(item)}
-                      </TableCell>
-                    )}
-                  </TableRow>
-                ))
-              ) : (
-                <TableRow>
-                  <TableCell
-                    colSpan={columns.length + (actionComponent ? 1 : 0)}
-                    className="text-center"
-                  >
-                    No data found
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
+        {isMobile ? renderMobileView() : renderTableView()}
       </CardContent>
 
       {totalPages > 1 && (
-        <CardFooter className="px-6 py-4 border-t flex items-center justify-between">
-          <div className="text-sm text-gray-500">
-            Showing {Math.min(((currentPage - 1) * pageSize) + 1, sortedData.length)} to {Math.min(currentPage * pageSize, sortedData.length)} of {sortedData.length} entries
-          </div>
+        <CardFooter className="px-6 py-4 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
+          {!isMobile && (
+            <div className="text-sm text-gray-500">
+              Showing {Math.min(((currentPage - 1) * pageSize) + 1, sortedData.length)} to {Math.min(currentPage * pageSize, sortedData.length)} of {sortedData.length} entries
+            </div>
+          )}
+
+          {isMobile && (
+            <div className="text-sm text-gray-500 text-center">
+              Page {currentPage} of {totalPages}
+            </div>
+          )}
 
           <Pagination>
             <PaginationContent>
@@ -194,7 +259,7 @@ export const DataTable: React.FC<DataTableProps> = ({
                 </Button>
               </PaginationItem>
 
-              {[...Array(Math.min(5, totalPages))].map((_, i) => {
+              {!isMobile && [...Array(Math.min(5, totalPages))].map((_, i) => {
                 // Logic to show correct page numbers when there are many pages
                 let pageNumber;
                 if (totalPages <= 5) {
