@@ -3,6 +3,7 @@ import {lazy, Suspense} from 'react'
 import {Layout} from './components/Layout'
 import {AuthProvider} from './context/AuthContext';
 import {ProtectedRoute} from './components/ProtectedRoutes';
+import {PlaceholderPage} from './components/PlaceholderPage';
 
 const Home = lazy(() => import('./pages/Home').then(module => ({default: module.Home})))
 const AboutPage = lazy(() => import('./pages/About').then(module => ({default: module.AboutPage})))
@@ -110,19 +111,19 @@ export const App = () => {
                         },
                         {
                             path: 'mini-apps',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Mini Apps Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Mini Apps Management" />,
                         },
                         {
                             path: 'mini-apps/stores',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Storefronts Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Storefronts Management" />,
                         },
                         {
                             path: 'mini-apps/services',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Services Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Services Management" />,
                         },
                         {
                             path: 'mini-apps/approvals',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Mini App Approvals</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Mini App Approvals" />,
                         },
                         {
                             path: 'marketplace',
@@ -134,11 +135,11 @@ export const App = () => {
                         },
                         {
                             path: 'users',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">User Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="User Management" />,
                         },
                         {
                             path: 'products',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Product Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Product Management" />,
                         },
                         {
                             path: 'services',
@@ -146,7 +147,7 @@ export const App = () => {
                         },
                         {
                             path: 'orders',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Order Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Order Management" />,
                         },
                         {
                             path: 'payments',
@@ -154,7 +155,7 @@ export const App = () => {
                         },
                         {
                             path: 'shipping',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Shipping Management</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Shipping Management" />,
                         },
                         {
                             path: 'subscriptions',
@@ -162,19 +163,19 @@ export const App = () => {
                         },
                         {
                             path: 'analytics',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Analytics Dashboard</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Analytics Dashboard" />,
                         },
                         {
                             path: 'settings',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Admin Settings</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Admin Settings" />,
                         },
                         {
                             path: 'support',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">Support Center</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="Support Center" />,
                         },
                         {
                             path: 'feedback',
-                            element: <div className="p-6"><h1 className="text-2xl font-bold mb-4">User Feedback</h1><p className="text-gray-600">This page is under construction.</p></div>,
+                            element: <PlaceholderPage title="User Feedback" />,
                         },
                     ],
                 },
