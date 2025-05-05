@@ -9,15 +9,8 @@ import {
   Sparkles,
   ArrowRight,
 } from 'lucide-react'
-import { useState } from 'react'
 
 export function AboutPage() {
-  const [expandedProfile, setExpandedProfile] = useState<string | null>(null)
-
-  const toggleProfile = (name: string) => {
-    setExpandedProfile(expandedProfile === name ? null : name)
-  }
-
   const companyValues = [
     {
       icon: <Target className="w-6 h-6 text-white" />,
