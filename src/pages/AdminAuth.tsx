@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { authService } from '../services/auth';
+import { useAuth } from '../context/AuthContext';
 
 interface AuthForm {
   email: string;
@@ -10,6 +10,7 @@ interface AuthForm {
 
 export const AdminAuth: React.FC = () => {
   const navigate = useNavigate();
+  const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState<AuthForm>({
     email: '',
@@ -40,11 +41,11 @@ export const AdminAuth: React.FC = () => {
 
     try {
       if (isLogin) {
-        await authService.login(formData.email, formData.password);
+        await login(formData.email, formData.password);
       } else {
-        await authService.register(formData.email, formData.password);
+        await register(formData.email, formData.password);
       }
-      
+
       // On successful auth, redirect to admin dashboard
       navigate('/admin/dashboard');
     } catch (err) {
