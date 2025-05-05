@@ -1,7 +1,23 @@
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useScrollTop } from '../hooks/use-scroll-top'
 
 export function Footer() {
+  const scrollToTop = useScrollTop()
+
+  // Custom link component that scrolls to top on mobile
+  const FooterLink = ({ to, children }: { to: string, children: React.ReactNode }) => {
+    const handleClick = (e: React.MouseEvent) => {
+        scrollToTop()
+    }
+
+    return (
+      <Link to={to} className="text-gray-400 hover:text-white" onClick={handleClick}>
+        {children}
+      </Link>
+    )
+  }
+
   return (
     <footer className="bg-gray-900 text-white py-8 sm:py-12 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
@@ -26,28 +42,28 @@ export function Footer() {
         <div>
           <h4 className="font-semibold mb-2 sm:mb-4">Product</h4>
           <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-            <li><Link to="/features" className="text-gray-400 hover:text-white">Features</Link></li>
-            <li><Link to="/pricing" className="text-gray-400 hover:text-white">Pricing</Link></li>
-            <li><Link to="/integrations" className="text-gray-400 hover:text-white">Integrations</Link></li>
-            <li><Link to="/updates" className="text-gray-400 hover:text-white">Updates</Link></li>
+            <li><FooterLink to="/features">Features</FooterLink></li>
+            <li><FooterLink to="/pricing">Pricing</FooterLink></li>
+            <li><FooterLink to="/integrations">Integrations</FooterLink></li>
+            <li><FooterLink to="/updates">Updates</FooterLink></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold mb-2 sm:mb-4">Resources</h4>
           <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-            <li><Link to="/blog" className="text-gray-400 hover:text-white">Blog</Link></li>
-            <li><Link to="/help" className="text-gray-400 hover:text-white">Help Center</Link></li>
-            <li><Link to="/tutorials" className="text-gray-400 hover:text-white">Tutorials</Link></li>
-            <li><Link to="/community" className="text-gray-400 hover:text-white">Community</Link></li>
+            <li><FooterLink to="/blog">Blog</FooterLink></li>
+            <li><FooterLink to="/help">Help Center</FooterLink></li>
+            <li><FooterLink to="/tutorials">Tutorials</FooterLink></li>
+            <li><FooterLink to="/community">Community</FooterLink></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold mb-2 sm:mb-4">Company</h4>
           <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-            <li><Link to="/about" className="text-gray-400 hover:text-white">About</Link></li>
-            <li><Link to="/careers" className="text-gray-400 hover:text-white">Careers</Link></li>
-            <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
-            <li><Link to="/legal" className="text-gray-400 hover:text-white">Legal</Link></li>
+            <li><FooterLink to="/about">About</FooterLink></li>
+            <li><FooterLink to="/careers">Careers</FooterLink></li>
+            <li><FooterLink to="/contact">Contact</FooterLink></li>
+            <li><FooterLink to="/legal">Legal</FooterLink></li>
           </ul>
         </div>
       </div>
