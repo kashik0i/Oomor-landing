@@ -5,8 +5,10 @@ import {
     Smartphone,
 } from 'lucide-react'
 import {DemoPreview} from "./DemoPreview.tsx";
+import {useNavigate} from "react-router-dom";
 
 export function Hero() {
+    const navigate = useNavigate();
     return (
         <section
             className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-secondary-700 text-white py-24 px-4">
@@ -48,14 +50,17 @@ export function Hero() {
 
                     <div className="flex flex-wrap gap-4 pt-2">
                         <button
+                            onClick={() => navigate('/admin/auth')}
                             className="bg-white text-primary-600 hover:bg-primary-50 font-semibold px-8 py-4 rounded-full transition-all shadow-soft flex items-center">
                             Start Selling Online
                             <ArrowRight className="ml-2 w-5 h-5"/>
                         </button>
-                        <button
+                        <a
+                            href="https://www.youtube.com/watch?v=example"
+                            target="_blank"
                             className="bg-transparent border-2 border-white/30 hover:bg-white/10 font-semibold px-8 py-4 rounded-full transition-all">
                             Watch Demo
-                        </button>
+                        </a>
                     </div>
 
                     <div className="flex items-center space-x-6 text-sm">

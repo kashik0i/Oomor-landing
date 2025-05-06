@@ -1,5 +1,6 @@
 import {ArrowRight, Calendar, ShoppingBag} from 'lucide-react'
 import {ScrollLink} from './ScrollLink'
+import {Link} from "react-router-dom";
 
 export function CtaSection() {
     return (
@@ -28,7 +29,7 @@ export function CtaSection() {
                                     <div className="bg-white/20 rounded-full p-2 mr-4">
                                         <ShoppingBag className="w-5 h-5"/>
                                     </div>
-                                    <p>Start selling online in minutes, not weeks</p>
+                                    <Link to="/admin/auth">Start selling online in minutes, not weeks</Link>
                                 </div>
                                 <div className="flex items-center">
                                     <div className="bg-white/20 rounded-full p-2 mr-4">
