@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { 
   Search, 
-  Video, 
-  BookOpen, 
+  BookOpen,
   Clock, 
   ChevronRight, 
   Tag, 
@@ -44,7 +43,7 @@ export function TutorialsPage() {
     category: 'getting-started',
     thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
     views: 12540,
-    date: 'May 15, 2023'
+    date: 'May 15, 2025'
   }
 
   const tutorials = [
@@ -57,7 +56,7 @@ export function TutorialsPage() {
       category: 'products',
       thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       views: 8320,
-      date: 'May 10, 2023'
+      date: 'May 10, 2025'
     },
     {
       id: 'payment-gateways',
@@ -68,7 +67,7 @@ export function TutorialsPage() {
       category: 'payments',
       thumbnail: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       views: 9150,
-      date: 'May 5, 2023'
+      date: 'May 5, 2025'
     },
     {
       id: 'shipping-rates',
@@ -79,7 +78,7 @@ export function TutorialsPage() {
       category: 'shipping',
       thumbnail: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       views: 6240,
-      date: 'April 28, 2023'
+      date: 'April 28, 2025'
     },
     {
       id: 'seo-optimization',
@@ -90,7 +89,7 @@ export function TutorialsPage() {
       category: 'marketing',
       thumbnail: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       views: 7890,
-      date: 'April 20, 2023'
+      date: 'April 20, 2025'
     },
     {
       id: 'analytics-dashboard',
@@ -101,7 +100,7 @@ export function TutorialsPage() {
       category: 'analytics',
       thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       views: 5430,
-      date: 'April 15, 2023'
+      date: 'April 15, 2025'
     },
     {
       id: 'theme-customization',
@@ -112,7 +111,7 @@ export function TutorialsPage() {
       category: 'store-setup',
       thumbnail: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       views: 4980,
-      date: 'April 8, 2023'
+      date: 'April 8, 2025'
     }
   ]
 

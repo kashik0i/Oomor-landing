@@ -30,8 +30,8 @@ export const AdvertisingPlatform: React.FC = () => {
       impressions: '45,678', 
       clicks: '2,345', 
       ctr: '5.13%', 
-      startDate: '2023-05-01', 
-      endDate: '2023-05-31' 
+      startDate: '2025-05-01', 
+      endDate: '2025-05-31' 
     },
     { 
       id: 2, 
@@ -44,8 +44,8 @@ export const AdvertisingPlatform: React.FC = () => {
       impressions: '32,450', 
       clicks: '1,876', 
       ctr: '5.78%', 
-      startDate: '2023-05-05', 
-      endDate: '2023-05-25' 
+      startDate: '2025-05-05', 
+      endDate: '2025-05-25' 
     },
     { 
       id: 3, 
@@ -58,8 +58,8 @@ export const AdvertisingPlatform: React.FC = () => {
       impressions: '28,970', 
       clicks: '1,456', 
       ctr: '5.03%', 
-      startDate: '2023-05-03', 
-      endDate: '2023-05-23' 
+      startDate: '2025-05-03', 
+      endDate: '2025-05-23' 
     },
     { 
       id: 4, 
@@ -72,8 +72,8 @@ export const AdvertisingPlatform: React.FC = () => {
       impressions: '38,450', 
       clicks: '1,950', 
       ctr: '5.07%', 
-      startDate: '2023-05-10', 
-      endDate: '2023-05-30' 
+      startDate: '2025-05-10', 
+      endDate: '2025-05-30' 
     },
     { 
       id: 5, 
@@ -86,8 +86,8 @@ export const AdvertisingPlatform: React.FC = () => {
       impressions: '0', 
       clicks: '0', 
       ctr: '0.00%', 
-      startDate: '2023-05-15', 
-      endDate: '2023-06-15' 
+      startDate: '2025-05-15', 
+      endDate: '2025-06-15' 
     },
     { 
       id: 6, 
@@ -100,8 +100,8 @@ export const AdvertisingPlatform: React.FC = () => {
       impressions: '29,780', 
       clicks: '1,540', 
       ctr: '5.17%', 
-      startDate: '2023-05-02', 
-      endDate: '2023-05-22' 
+      startDate: '2025-05-02', 
+      endDate: '2025-05-22' 
     },
     { 
       id: 7, 
@@ -114,8 +114,8 @@ export const AdvertisingPlatform: React.FC = () => {
       impressions: '42,670', 
       clicks: '2,230', 
       ctr: '5.23%', 
-      startDate: '2023-04-15', 
-      endDate: '2023-05-15' 
+      startDate: '2025-04-15', 
+      endDate: '2025-05-15' 
     },
   ]);
 

@@ -117,7 +117,7 @@ export const AddOnServices: React.FC = () => {
       serviceName: 'Organic Food Delivery', 
       provider: 'OrganicFoods', 
       category: 'Food Service', 
-      requestDate: '2023-05-01', 
+      requestDate: '2025-05-01', 
       status: 'Under Review', 
       notes: 'Requesting integration with shipping and payment systems' 
     },
@@ -126,7 +126,7 @@ export const AddOnServices: React.FC = () => {
       serviceName: 'Custom Jewelry', 
       provider: 'ArtisanJewelry', 
       category: 'Merchandise', 
-      requestDate: '2023-05-03', 
+      requestDate: '2025-05-03', 
       status: 'Under Review', 
       notes: 'Requesting product catalog integration' 
     },
@@ -135,7 +135,7 @@ export const AddOnServices: React.FC = () => {
       serviceName: 'Digital Art Prints', 
       provider: 'DigitalArtists', 
       category: 'Digital Products', 
-      requestDate: '2023-04-28', 
+      requestDate: '2025-04-28', 
       status: 'Approved', 
       notes: 'Integration with print-on-demand service' 
     },
@@ -144,7 +144,7 @@ export const AddOnServices: React.FC = () => {
       serviceName: 'Fitness Classes', 
       provider: 'FitnessPro', 
       category: 'Educational Service', 
-      requestDate: '2023-04-25', 
+      requestDate: '2025-04-25', 
       status: 'Rejected', 
       notes: "Service doesn't align with platform requirements" 
     },

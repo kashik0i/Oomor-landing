@@ -1,5 +1,5 @@
-import {Account, AppwriteException, Client, ID, type Models} from 'appwrite';
-import {assertIsDefined} from "@/lib/utils.ts";
+import {Account, AppwriteException, ID, type Models} from 'appwrite';
+import { getAppwriteClient } from './client';
 
 export class AuthService {
     account: Account;
@@ -7,13 +7,7 @@ export class AuthService {
     user: Promise<Models.User<Models.Preferences> | null> | null = null;
 
     constructor() {
-        assertIsDefined(import.meta.env.VITE_APP_APPWRITE_URL, 'Appwrite URL is not defined');
-        assertIsDefined(import.meta.env.VITE_APP_PROJECT_ID, 'Appwrite Project ID is not defined');
-        const client = new Client()
-            .setEndpoint(import.meta.env.VITE_APP_APPWRITE_URL)
-            .setProject(import.meta.env.VITE_APP_PROJECT_ID);
-
-        this.account = new Account(client);
+        this.account = new Account(getAppwriteClient());
     }
 
     async register(email: string, password: string) {

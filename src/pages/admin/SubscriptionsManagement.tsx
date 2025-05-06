@@ -78,14 +78,14 @@ export const SubscriptionsManagement: React.FC = () => {
 
   // Sample subscribers data
   const [subscribers, setSubscribers] = useState([
-    { id: 1, name: 'TrendyFashion', plan: 'Enterprise', status: 'Active', startDate: '2023-01-15', nextBilling: '2023-06-15', revenue: '$599.94' },
-    { id: 2, name: 'HealthyMeals', plan: 'Professional', status: 'Active', startDate: '2023-02-10', nextBilling: '2023-06-10', revenue: '$249.95' },
-    { id: 3, name: 'CustomPrints', plan: 'Professional', status: 'Active', startDate: '2023-01-22', nextBilling: '2023-06-22', revenue: '$249.95' },
-    { id: 4, name: 'HomeDecor', plan: 'Basic', status: 'Active', startDate: '2023-03-05', nextBilling: '2023-06-05', revenue: '$99.95' },
-    { id: 5, name: 'ArtisanCrafts', plan: 'Basic', status: 'Active', startDate: '2023-02-18', nextBilling: '2023-06-18', revenue: '$99.95' },
-    { id: 6, name: 'OrganicFoods', plan: 'Free', status: 'Active', startDate: '2023-04-01', nextBilling: 'N/A', revenue: '$0' },
-    { id: 7, name: 'PrintOnDemand', plan: 'Enterprise', status: 'Active', startDate: '2023-01-10', nextBilling: '2023-06-10', revenue: '$599.94' },
-    { id: 8, name: 'WellnessSubscriptions', plan: 'Professional', status: 'Active', startDate: '2023-03-15', nextBilling: '2023-06-15', revenue: '$249.95' },
+    { id: 1, name: 'TrendyFashion', plan: 'Enterprise', status: 'Active', startDate: '2025-01-15', nextBilling: '2025-06-15', revenue: '$599.94' },
+    { id: 2, name: 'HealthyMeals', plan: 'Professional', status: 'Active', startDate: '2025-02-10', nextBilling: '2025-06-10', revenue: '$249.95' },
+    { id: 3, name: 'CustomPrints', plan: 'Professional', status: 'Active', startDate: '2025-01-22', nextBilling: '2025-06-22', revenue: '$249.95' },
+    { id: 4, name: 'HomeDecor', plan: 'Basic', status: 'Active', startDate: '2025-03-05', nextBilling: '2025-06-05', revenue: '$99.95' },
+    { id: 5, name: 'ArtisanCrafts', plan: 'Basic', status: 'Active', startDate: '2025-02-18', nextBilling: '2025-06-18', revenue: '$99.95' },
+    { id: 6, name: 'OrganicFoods', plan: 'Free', status: 'Active', startDate: '2025-04-01', nextBilling: 'N/A', revenue: '$0' },
+    { id: 7, name: 'PrintOnDemand', plan: 'Enterprise', status: 'Active', startDate: '2025-01-10', nextBilling: '2025-06-10', revenue: '$599.94' },
+    { id: 8, name: 'WellnessSubscriptions', plan: 'Professional', status: 'Active', startDate: '2025-03-15', nextBilling: '2025-06-15', revenue: '$249.95' },
   ]);
 
   // Columns for subscription plans table

@@ -82,8 +82,8 @@ export function CommunityPage() {
 
   const upcomingEvents = [
     {
-      title: "Oomor Virtual Summit 2023",
-      date: "June 15-17, 2023",
+      title: "Oomor Virtual Summit 2025",
+      date: "June 15-17, 2025",
       time: "9:00 AM - 5:00 PM EST",
       description: "Join us for three days of expert talks, workshops, and networking opportunities with the Oomor community.",
       type: "Virtual Conference",
@@ -91,7 +91,7 @@ export function CommunityPage() {
     },
     {
       title: "E-commerce SEO Masterclass",
-      date: "May 25, 2023",
+      date: "May 25, 2025",
       time: "1:00 PM - 3:00 PM EST",
       description: "Learn advanced SEO techniques specifically for e-commerce stores from industry experts.",
       type: "Webinar",
@@ -99,7 +99,7 @@ export function CommunityPage() {
     },
     {
       title: "Product Photography Workshop",
-      date: "June 2, 2023",
+      date: "June 2, 2025",
       time: "11:00 AM - 12:30 PM EST",
       description: "Discover how to take professional product photos with just your smartphone and basic equipment.",
       type: "Workshop",

@@ -1,10 +1,11 @@
 import {useState} from "react";
 import {
-    Bell, Briefcase,
-    Calendar, Camera, ChevronLeft, Clock,
-    Compass, CreditCard, FileText, Heart,
-    Home, Mail, Map,
-    MessageSquare, Music, Phone, Search,
+    Bell,
+    ChevronLeft,
+    Compass,
+    Home,
+    MessageSquare,
+    Search,
     Settings,
     ShoppingCart,
     Users

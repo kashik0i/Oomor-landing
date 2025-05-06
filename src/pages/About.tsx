@@ -42,7 +42,7 @@ export function AboutPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4 mr-2 text-yellow-300" />
-            <span>Transforming e-commerce since 2023</span>
+            <span>Transforming e-commerce since 2025</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6 max-w-3xl">Our mission is to democratize e-commerce for everyone</h1>
@@ -78,7 +78,7 @@ export function AboutPage() {
                   bringing together visionary leadership and cutting-edge engineering.
                 </p>
                 <p>
-                  Founded in 2023, Oomor was born from the frustration of seeing talented creators struggle with overly complex e-commerce platforms. 
+                  Founded in 2025, Oomor was born from the frustration of seeing talented creators struggle with overly complex e-commerce platforms. 
                   We believe that selling online should be accessible to everyone, regardless of technical background or resources.
                 </p>
               </div>

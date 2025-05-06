@@ -39,7 +39,7 @@ export function UpdatesPage() {
       id: 'v2-5',
       version: 'v2.5',
       title: 'Major Platform Update',
-      date: 'May 15, 2023',
+      date: 'May 15, 2025',
       description: 'A comprehensive update focusing on performance improvements and new marketing tools.',
       changes: [
         {
@@ -75,7 +75,7 @@ export function UpdatesPage() {
       id: 'v2-4-2',
       version: 'v2.4.2',
       title: 'Security & Performance Update',
-      date: 'April 28, 2023',
+      date: 'April 28, 2025',
       description: 'This update focuses on security enhancements and performance optimizations.',
       changes: [
         {
@@ -108,7 +108,7 @@ export function UpdatesPage() {
       id: 'v2-4',
       version: 'v2.4',
       title: 'Enhanced Marketing Tools',
-      date: 'April 10, 2023',
+      date: 'April 10, 2025',
       description: 'New marketing features to help you grow your business and reach more customers.',
       changes: [
         {
@@ -141,7 +141,7 @@ export function UpdatesPage() {
       id: 'v2-3-1',
       version: 'v2.3.1',
       title: 'Bug Fix Release',
-      date: 'March 25, 2023',
+      date: 'March 25, 2025',
       description: 'This release addresses several important bugs reported by our users.',
       changes: [
         {
@@ -160,7 +160,7 @@ export function UpdatesPage() {
       id: 'v2-3',
       version: 'v2.3',
       title: 'Inventory & Order Management',
-      date: 'March 10, 2023',
+      date: 'March 10, 2025',
       description: 'Major improvements to inventory tracking and order management capabilities.',
       changes: [
         {
@@ -216,25 +216,25 @@ export function UpdatesPage() {
     {
       title: "Advanced AI Product Photography",
       description: "Generate professional product photos from simple snapshots using our AI enhancement technology.",
-      eta: "Q3 2023",
+      eta: "Q3 2025",
       category: "AI Tools"
     },
     {
       title: "Global Tax Compliance",
       description: "Automatic tax calculation and compliance for over 100 countries, including VAT, GST, and sales tax.",
-      eta: "Q3 2023",
+      eta: "Q3 2025",
       category: "International Commerce"
     },
     {
       title: "Advanced Customer Insights",
       description: "Detailed customer behavior analytics with actionable insights to improve conversion.",
-      eta: "Q4 2023",
+      eta: "Q4 2025",
       category: "Analytics"
     },
     {
       title: "Mobile App Builder",
       description: "Create custom mobile apps for your store without coding knowledge.",
-      eta: "Q4 2023",
+      eta: "Q4 2025",
       category: "Mobile Commerce"
     }
   ]

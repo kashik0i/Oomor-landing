@@ -7,7 +7,7 @@ export const TransactionMonitoring: React.FC = () => {
   const [transactions, setTransactions] = useState([
     { 
       id: 'TRX-12345', 
-      date: '2023-05-01', 
+      date: '2025-05-01', 
       vendor: 'TrendyFashion', 
       customer: 'John Doe', 
       amount: '$128.50', 
@@ -18,7 +18,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12346', 
-      date: '2023-05-01', 
+      date: '2025-05-01', 
       vendor: 'HealthyMeals', 
       customer: 'Jane Smith', 
       amount: '$45.99', 
@@ -29,7 +29,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12347', 
-      date: '2023-05-02', 
+      date: '2025-05-02', 
       vendor: 'CustomPrints', 
       customer: 'Mike Johnson', 
       amount: '$78.25', 
@@ -40,7 +40,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12348', 
-      date: '2023-05-02', 
+      date: '2025-05-02', 
       vendor: 'HomeDecor', 
       customer: 'Sarah Williams', 
       amount: '$210.75', 
@@ -51,7 +51,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12349', 
-      date: '2023-05-03', 
+      date: '2025-05-03', 
       vendor: 'ArtisanCrafts', 
       customer: 'David Brown', 
       amount: '$65.00', 
@@ -62,7 +62,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12350', 
-      date: '2023-05-03', 
+      date: '2025-05-03', 
       vendor: 'PrintOnDemand', 
       customer: 'Emily Davis', 
       amount: '$42.99', 
@@ -73,7 +73,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12351', 
-      date: '2023-05-04', 
+      date: '2025-05-04', 
       vendor: 'HealthyMeals', 
       customer: 'Robert Wilson', 
       amount: '$89.99', 
@@ -84,7 +84,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12352', 
-      date: '2023-05-04', 
+      date: '2025-05-04', 
       vendor: 'TrendyFashion', 
       customer: 'Lisa Martinez', 
       amount: '$156.75', 
@@ -95,7 +95,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12353', 
-      date: '2023-05-05', 
+      date: '2025-05-05', 
       vendor: 'CustomPrints', 
       customer: 'Kevin Taylor', 
       amount: '$35.50', 
@@ -106,7 +106,7 @@ export const TransactionMonitoring: React.FC = () => {
     },
     { 
       id: 'TRX-12354', 
-      date: '2023-05-05', 
+      date: '2025-05-05', 
       vendor: 'WellnessSubscriptions', 
       customer: 'Amanda Thomas', 
       amount: '$49.99', 

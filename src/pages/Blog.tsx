@@ -19,7 +19,7 @@ export function BlogPage() {
     excerpt: "Learn the proven strategies that helped our customers triple their sales in just 90 days using Oomor's powerful features.",
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
     author: 'Sarah Johnson',
-    date: 'May 15, 2023',
+    date: 'May 15, 2025',
     readTime: '8 min read',
     category: 'Growth Strategies'
   }
@@ -31,7 +31,7 @@ export function BlogPage() {
       excerpt: 'With over 70% of online shopping happening on mobile devices, optimizing your store for mobile is no longer optional.',
       image: 'https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       author: 'Michael Chen',
-      date: 'May 10, 2023',
+      date: 'May 10, 2025',
       readTime: '6 min read',
       category: 'Mobile Commerce'
     },
@@ -41,7 +41,7 @@ export function BlogPage() {
       excerpt: "Acquiring new customers costs 5x more than retaining existing ones. Here's how to keep your customers coming back.",
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       author: 'Jessica Williams',
-      date: 'May 5, 2023',
+      date: 'May 5, 2025',
       readTime: '7 min read',
       category: 'Customer Experience'
     },
@@ -51,7 +51,7 @@ export function BlogPage() {
       excerpt: 'Effective inventory management can make or break your e-commerce business. Learn how to optimize your approach.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       author: 'David Martinez',
-      date: 'April 28, 2023',
+      date: 'April 28, 2025',
       readTime: '5 min read',
       category: 'Operations'
     },
@@ -61,7 +61,7 @@ export function BlogPage() {
       excerpt: 'Leverage the power of social media to drive traffic and sales to your online store with these proven tactics.',
       image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       author: 'Emma Thompson',
-      date: 'April 20, 2023',
+      date: 'April 20, 2025',
       readTime: '9 min read',
       category: 'Marketing'
     },
@@ -71,7 +71,7 @@ export function BlogPage() {
       excerpt: "The right payment options can significantly impact your conversion rates. Here's how to choose wisely.",
       image: 'https://images.unsplash.com/photo-1559067096-49ebca3406aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       author: 'Robert Kim',
-      date: 'April 15, 2023',
+      date: 'April 15, 2025',
       readTime: '6 min read',
       category: 'Payments'
     },
@@ -81,7 +81,7 @@ export function BlogPage() {
       excerpt: 'Boost your organic traffic and outrank competitors with these advanced SEO strategies specifically for e-commerce.',
       image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
       author: 'Sophia Garcia',
-      date: 'April 8, 2023',
+      date: 'April 8, 2025',
       readTime: '8 min read',
       category: 'SEO'
     }
